@@ -49,33 +49,9 @@ export default function Contact() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
-          {/* Info */}
-          <div className="space-y-6">
-            <div className="card">
-              <div className="text-3xl mb-3">📧</div>
-              <h3 className="font-semibold text-white mb-1">Email</h3>
-              <p className="text-white/50 text-sm">support@smanalyzer.dev</p>
-            </div>
-            <div className="card">
-              <div className="text-3xl mb-3">🐙</div>
-              <h3 className="font-semibold text-white mb-1">GitHub</h3>
-              <p className="text-white/50 text-sm">github.com/sm-analyzer</p>
-            </div>
-            <div className="card">
-              <div className="text-3xl mb-3">💬</div>
-              <h3 className="font-semibold text-white mb-1">Response Time</h3>
-              <p className="text-white/50 text-sm">We typically respond within 24–48 hours.</p>
-            </div>
-            <div className="card bg-brand-900/20 border-brand-500/20">
-              <h3 className="font-semibold text-brand-300 mb-2">⚠️ Disclaimer</h3>
-              <p className="text-white/40 text-sm leading-relaxed">
-                This tool is for educational purposes only. If you're struggling with
-                social media addiction, please consult a mental health professional.
-              </p>
-            </div>
-          </div>
 
-          {/* Form */}
+
+                  {/* Form */}
           <div className="card">
             <h2 className="font-display text-xl font-bold text-white mb-6">Send a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -115,6 +91,49 @@ export default function Contact() {
               </button>
             </form>
           </div>
+
+
+
+
+
+          {/* Info */}
+          <div className="space-y-6">
+
+  <div className="card">
+    <div className="text-3xl mb-3">❓</div>
+    <h3 className="font-semibold text-white mb-1">General Queries</h3>
+    <p className="text-white/50 text-sm">
+      Need help understanding how the analyzer works or how to use it effectively.
+    </p>
+  </div>
+
+  <div className="card">
+    <div className="text-3xl mb-3">🐞</div>
+    <h3 className="font-semibold text-white mb-1">Report Issues</h3>
+    <p className="text-white/50 text-sm">
+      Facing any technical problem or unexpected behavior while using the platform.
+    </p>
+  </div>
+
+  <div className="card">
+    <div className="text-3xl mb-3">💡</div>
+    <h3 className="font-semibold text-white mb-1">Suggestions</h3>
+    <p className="text-white/50 text-sm">
+      Share ideas or improvements that can make this tool more useful.
+    </p>
+  </div>
+
+  <div className="card bg-brand-900/20 border-brand-500/20">
+    <h3 className="font-semibold text-brand-300 mb-2">⚠️ Disclaimer</h3>
+    <p className="text-white/40 text-sm leading-relaxed">
+      This tool is for educational purposes only. It is not a substitute for
+      professional advice or medical guidance.
+    </p>
+  </div>
+
+</div>
+
+
         </div>
       </div>
     </div>
