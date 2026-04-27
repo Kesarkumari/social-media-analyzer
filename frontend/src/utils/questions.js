@@ -164,10 +164,10 @@ export const QUESTIONS = [
   id: 17,
   text: "Which platform do you use the MOST? (for tracking)",
   options: [
-    { label: "Instagram", score: 2 },
+    { label: "Instagram", score: 1 },
     { label: "YouTube", score: 2 },
     { label: "TikTok", score: 3 },
-    { label: "Twitter/X", score: 2 },
+    { label: "Twitter/X", score: 4 },
   ],
   isPlatform: true,
 },
