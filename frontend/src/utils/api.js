@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://social-media-analyzer-u575.onrender.com/api',
 });
 
 // ✅ ADD THIS INTERCEPTOR (VERY IMPORTANT)
