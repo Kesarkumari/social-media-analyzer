@@ -98,69 +98,93 @@ export default function Questionnaire({ onSubmit }) {
         <div className="card">
           <h2 className="text-white text-xl font-bold mb-5">User Details</h2>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
 
-            <input type="number" className="input-field" placeholder="Age"
-              value={userData.age}
-              onChange={(e) => setUserData({ ...userData, age: e.target.value })} />
+            <div>
+              <label className="text-white/60 text-sm mb-1 block">Age</label>
+              <input type="number" className="input-field" placeholder="e.g. 21"
+                value={userData.age}
+                onChange={(e) => setUserData({ ...userData, age: e.target.value })} />
+            </div>
 
-            <select className="input-field" value={userData.gender}
-              onChange={(e) => setUserData({ ...userData, gender: e.target.value })}>
-              <option value="">Select Gender</option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select>
+            <div>
+              <label className="text-white/60 text-sm mb-1 block">Gender</label>
+              <select className="input-field" value={userData.gender}
+                onChange={(e) => setUserData({ ...userData, gender: e.target.value })}>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
 
-            <input type="number" className="input-field" placeholder="Daily Screen Time (hrs)"
-              value={userData.dailyScreenTime}
-              onChange={(e) => setUserData({ ...userData, dailyScreenTime: e.target.value })} />
+            <div>
+              <label className="text-white/60 text-sm mb-1 block">Daily Screen Time (hrs)</label>
+              <input type="number" className="input-field" placeholder="e.g. 3"
+                value={userData.dailyScreenTime}
+                onChange={(e) => setUserData({ ...userData, dailyScreenTime: e.target.value })} />
+            </div>
 
-            <input type="number" className="input-field" placeholder="Sleep Quality (1-10)"
-              value={userData.sleepQuality}
-              onChange={(e) => setUserData({ ...userData, sleepQuality: e.target.value })} />
+            <div>
+              <label className="text-white/60 text-sm mb-1 block">Sleep Quality (1-10)</label>
+              <input type="number" className="input-field" placeholder="e.g. 7"
+                value={userData.sleepQuality}
+                onChange={(e) => setUserData({ ...userData, sleepQuality: e.target.value })} />
+            </div>
 
-            <input type="number" className="input-field" placeholder="Stress Level (1-10)"
-              value={userData.stressLevel}
-              onChange={(e) => setUserData({ ...userData, stressLevel: e.target.value })} />
+            <div>
+              <label className="text-white/60 text-sm mb-1 block">Stress Level (1-10)</label>
+              <input type="number" className="input-field" placeholder="e.g. 5"
+                value={userData.stressLevel}
+                onChange={(e) => setUserData({ ...userData, stressLevel: e.target.value })} />
+            </div>
 
-            <input type="number" className="input-field" placeholder="Days Without Social Media"
-              value={userData.daysWithoutSocialMedia}
-              onChange={(e) => setUserData({ ...userData, daysWithoutSocialMedia: e.target.value })} />
+            <div>
+              <label className="text-white/60 text-sm mb-1 block">Days Without Social Media</label>
+              <input type="number" className="input-field" placeholder="e.g. 2"
+                value={userData.daysWithoutSocialMedia}
+                onChange={(e) => setUserData({ ...userData, daysWithoutSocialMedia: e.target.value })} />
+            </div>
 
-            <input type="number" className="input-field" placeholder="Exercise Frequency (per week)"
-              value={userData.exerciseFrequency}
-              onChange={(e) => setUserData({ ...userData, exerciseFrequency: e.target.value })} />
+            <div>
+              <label className="text-white/60 text-sm mb-1 block">Exercise Frequency (per week, 0-7)</label>
+              <input type="number" className="input-field" placeholder="e.g. 3"
+                value={userData.exerciseFrequency}
+                onChange={(e) => setUserData({ ...userData, exerciseFrequency: e.target.value })} />
+            </div>
 
-            <select className="input-field" value={userData.platform}
-              onChange={(e) => setUserData({ ...userData, platform: e.target.value })}>
-              <option value="">Select Platform</option>
-              <option>Facebook</option>
-              <option>Instagram</option>
-              <option>YouTube</option>
-              <option>LinkedIn</option>
-              <option>X (Twitter)</option>
-            </select>
+            <div>
+              <label className="text-white/60 text-sm mb-1 block">Select Platform</label>
+              <select className="input-field" value={userData.platform}
+                onChange={(e) => setUserData({ ...userData, platform: e.target.value })}>
+                <option value="">Select Platform</option>
+                <option>Facebook</option>
+                <option>Instagram</option>
+                <option>YouTube</option>
+                <option>LinkedIn</option>
+                <option>X (Twitter)</option>
+              </select>
+            </div>
 
-            <input type="number" className="input-field" placeholder="Happiness Index (1-10)"
-              value={userData.happinessIndex}
-              onChange={(e) => setUserData({ ...userData, happinessIndex: e.target.value })} />
+            <div>
+              <label className="text-white/60 text-sm mb-1 block">Happiness Index (1-10)</label>
+              <input type="number" className="input-field" placeholder="e.g. 8"
+                value={userData.happinessIndex}
+                onChange={(e) => setUserData({ ...userData, happinessIndex: e.target.value })} />
+            </div>
 
             {/* ===== ONLINE SHOPPING ===== */}
             <div className="bg-white/5 border border-white/10 rounded-xl px-4 py-3">
               <p className="text-white/80 text-sm mb-3">Do you shop online?</p>
               <div className="flex gap-3">
                 {['yes', 'no'].map((opt) => (
-                  <button
-                    key={opt}
-                    type="button"
+                  <button key={opt} type="button"
                     onClick={() => setUserData({ ...userData, onlineShopping: opt, shoppingReason: '' })}
                     className={`flex-1 py-2 rounded-lg text-sm font-medium border transition-all capitalize ${
                       userData.onlineShopping === opt
                         ? 'bg-blue-500 text-white border-blue-400'
                         : 'bg-white/5 text-white/70 border-white/10 hover:bg-white/10'
-                    }`}
-                  >
+                    }`}>
                     {opt === 'yes' ? 'Yes' : 'No'}
                   </button>
                 ))}
@@ -175,16 +199,13 @@ export default function Questionnaire({ onSubmit }) {
                     { value: 'review_influence', label: '⭐ Influenced by reviews' },
                     { value: 'ads_influence', label: '📢 Influenced by ads' },
                   ].map((opt) => (
-                    <button
-                      key={opt.value}
-                      type="button"
+                    <button key={opt.value} type="button"
                       onClick={() => setUserData({ ...userData, shoppingReason: opt.value })}
                       className={`w-full p-2.5 rounded-lg text-left text-sm border transition-all ${
                         userData.shoppingReason === opt.value
                           ? 'bg-blue-500 text-white border-blue-400'
                           : 'bg-white/5 text-white/70 border-white/10 hover:bg-white/10'
-                      }`}
-                    >
+                      }`}>
                       {opt.label}
                     </button>
                   ))}
@@ -218,10 +239,8 @@ export default function Questionnaire({ onSubmit }) {
               <span>{Math.round(((current + 1) / totalQ) * 100)}%</span>
             </div>
             <div className="w-full h-1.5 bg-white/10 rounded-full">
-              <div
-                className="h-full bg-blue-500 rounded-full transition-all duration-300"
-                style={{ width: `${((current + 1) / totalQ) * 100}%` }}
-              />
+              <div className="h-full bg-blue-500 rounded-full transition-all duration-300"
+                style={{ width: `${((current + 1) / totalQ) * 100}%` }} />
             </div>
           </div>
 
@@ -233,15 +252,13 @@ export default function Questionnaire({ onSubmit }) {
             {question.options.map((opt, i) => {
               const selected = answers[String(question.id)] === opt.score;
               return (
-                <button
-                  key={i}
+                <button key={i}
                   onClick={() => selectAnswer(question.id, opt.score)}
                   className={`w-full p-3 rounded-lg text-left text-sm transition-all border ${
                     selected
                       ? 'bg-blue-500 text-white border-blue-400'
                       : 'bg-white/5 text-white/80 border-white/10 hover:bg-white/10'
-                  }`}
-                >
+                  }`}>
                   {opt.label}
                 </button>
               );
