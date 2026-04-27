@@ -32,7 +32,7 @@ router.post('/submit', async (req, res) => {
 
     // ✅ MongoDB mein save karo
     const response = await Response.create({
-      userId: userData.userId || 'anonymous',
+      userId: userData.userEmail || userData.userId || 'anonymous',
       age: Number(userData.age),
       gender: userData.gender,
       dailyScreenTime: Number(userData.dailyScreenTime),
