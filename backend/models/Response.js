@@ -16,6 +16,7 @@ const responseSchema = new mongoose.Schema(
     exerciseFrequency: { type: Number },
 
    platform: { type: String },
+   userEmail: { type: String },
    happinessIndex: { type: Number },
    onlineShopping: { type: String },
    shoppingReason: { type: String },

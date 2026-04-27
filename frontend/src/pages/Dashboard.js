@@ -39,7 +39,11 @@ useEffect(() => {
   const handleSubmit = async (formData) => {
   setLoading(true);
   try {
-    const { data } = await api.post('/responses/submit', formData);
+    const { data } = await api.post('/responses/submit', {
+  ...formData,
+  userId: user?.id || user?._id,
+  userEmail: user?.email,
+});
     setResult(data.response);
     setView('results');
     loadHistory();
