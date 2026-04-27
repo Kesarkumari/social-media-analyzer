@@ -35,9 +35,9 @@ export default function Home() {
 
           <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             How Much Is{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400">
-              Social Media
-            </span>{' '}
+           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+  Social Media{' '}
+</span>
             Affecting You?
           </h1>
 
