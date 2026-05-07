@@ -1,208 +1,329 @@
 # 📱 Social Media Impact Analyzer
-A full-stack MERN application to analyze your social media habits and their impact on your life.
+
+A full-stack MERN application to analyze social media habits and their impact on productivity, mental health, and daily life.
 
 ---
 
-## 🗂️ Project Structure
-```
-social-media-analyzer/
-├── backend/
-│   ├── middleware/
-│   │   └── auth.js          # JWT auth middleware
-│   ├── models/
-│   │   ├── User.js           # User schema
-│   │   └── Response.js       # Response schema
-│   ├── routes/
-│   │   ├── auth.js           # /api/auth routes
-│   │   └── responses.js      # /api/responses routes
-│   ├── .env                  # Environment variables
-│   ├── package.json
-│   └── server.js             # Express server
+# 👨‍💻 Team Details
+
+| Name | Roll Number |
+|------|-------------|
+| Kesar Kumari | 2210991780 |
+| Kavya | 2210991775 |
+| Shalini Kumari | 2210992284 |
+| Matalika Dutta | 2210991902 |
+
+---
+
+# 🏫 Institute Details
+
+Chitkara University Institute of Engineering and Technology,  
+Chitkara University, Punjab, India
+
+---
+
+# 📌 Research Paper Title
+
+## Social Media Impact on Mental Health
+
+---
+
+# 📧 Team Emails
+
+- kesar1780.be22@chitkara.edu.in
+- kavya1775.be22@chitkara.edu.in
+- shalini2284.be22@chitkara.edu.in
+- matalika1902.be22@chitkara.edu.in
+
+---
+
+# 📌 Project Type
+
+Research Project
+
+---
+
+# 📌 Current Status
+
+Completed
+
+---
+
+# 🗂️ Repository Structure
+
+```text
+Social Media Impact Analyzer (2210991780_2210991775_2210992284_2210991902)
 │
-└── frontend/
-    ├── public/
-    │   └── index.html
-    ├── src/
-    │   ├── components/
-    │   │   ├── Navbar.js
-    │   │   ├── Questionnaire.js
-    │   │   └── Results.js
-    │   ├── context/
-    │   │   └── AuthContext.js
-    │   ├── pages/
-    │   │   ├── About.js
-    │   │   ├── Auth.js
-    │   │   ├── Contact.js
-    │   │   ├── Dashboard.js
-    │   │   └── Home.js
-    │   ├── utils/
-    │   │   ├── api.js
-    │   │   └── questions.js
-    │   ├── App.js
-    │   ├── index.css
-    │   └── index.js
-    ├── package.json
-    ├── postcss.config.js
-    └── tailwind.config.js
+├── IPR Submission Proof/
+│   ├── Research_Paper_Submission.png
+│   ├── Patent_Form.pdf
+│   ├── Copyright_Form.pdf
+│   └── Submission_Proof.png
+│
+├── Report and PPT/
+│   ├── Final_Report.pdf
+│   └── Project_Presentation.pptx
+│
+├── Source code/
+│   └── social-media-analyzer/
+│       ├── backend/
+│       └── frontend/
+│
+├── Screenshots/
+│   ├── HomePage.png
+│   ├── Dashboard.png
+│   ├── Results.png
+│   └── Login.png
+│
+└── README.md
 ```
 
 ---
 
-## ⚙️ Prerequisites
-- **Node.js** v16+ ([https://nodejs.org](https://nodejs.org))
-- **MongoDB** running locally OR a MongoDB Atlas URI
-- **npm** (comes with Node.js)
+# ⚙️ Prerequisites
+
+- Node.js v16+
+- MongoDB Local OR MongoDB Atlas
+- npm
 
 ---
 
-## 🚀 Setup Instructions
+# 🚀 Setup Instructions
 
-### Step 1 — Clone / Extract the Project
-Extract the zip into a folder and open a terminal in that folder.
+## Step 1 — Clone / Extract the Project
+
+Extract the zip file and open terminal inside the project folder.
 
 ---
 
-### Step 2 — Backend Setup
+# 🔧 Backend Setup
 
 ```bash
 cd backend
 npm install
 ```
 
-Open `backend/.env` and update if needed:
-```
+Create `.env` file inside backend folder:
+
+```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/social-media-analyzer
-JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
+JWT_SECRET=your_super_secret_jwt_key
 ```
 
-> ✅ If using MongoDB Atlas, replace `MONGODB_URI` with your Atlas connection string.
+If using MongoDB Atlas:
 
-Start the backend:
+```env
+MONGODB_URI=your_mongodb_atlas_connection_string
+```
+
+Start backend server:
+
 ```bash
-npm run dev      # development (with nodemon)
-# OR
-npm start        # production
+npm run dev
 ```
 
-You should see:
+OR
+
+```bash
+npm start
 ```
+
+Expected Output:
+
+```text
 MongoDB connected
 Server running on port 5000
 ```
 
 ---
 
-### Step 3 — Frontend Setup
+# 💻 Frontend Setup
 
-In a **new terminal**:
+Open a new terminal:
+
 ```bash
 cd frontend
 npm install
 npm start
 ```
 
-The app will open at **http://localhost:3000**
+Frontend will run at:
 
-> The frontend proxies API calls to `http://localhost:5000` via the `"proxy"` setting in `package.json`.
+```text
+http://localhost:3000
+```
 
 ---
 
-## 🌐 API Endpoints
+# 🌐 API Endpoints
 
-### Auth
+## Authentication APIs
+
 | Method | Route | Description |
 |--------|-------|-------------|
-| POST | `/api/auth/signup` | Register with name, email, password |
-| POST | `/api/auth/login` | Login with email, password → returns JWT |
+| POST | /api/auth/signup | Register User |
+| POST | /api/auth/login | Login User |
 
-### Responses
+---
+
+## Response APIs
+
 | Method | Route | Description | Auth Required |
 |--------|-------|-------------|--------------|
-| POST | `/api/responses/submit` | Submit answers + selfRating | ✅ |
-| GET | `/api/responses/my` | Get your last 5 results | ✅ |
+| POST | /api/responses/submit | Submit Assessment | ✅ |
+| GET | /api/responses/my | Get Previous Results | ✅ |
 
 ---
 
-## 🗄️ Database Schemas
+# 🗄️ Database Schemas
 
-### User
+## User Schema
+
 ```json
 {
-  "name": "string (required)",
-  "email": "string (required, unique)",
-  "password": "string (hashed, required)"
+  "name": "String",
+  "email": "String",
+  "password": "Hashed String"
 }
 ```
 
-### Response
+---
+
+## Response Schema
+
 ```json
 {
-  "userId": "ObjectId (ref: User)",
-  "answers": "Object { questionId: score }",
+  "userId": "ObjectId",
+  "answers": {},
   "score": "Number",
   "category": "Healthy | Moderate | High Impact | Addicted",
-  "selfRating": "Number (1–10)",
-  "platformUsage": "Object { instagram, youtube, tiktok, twitter, facebook, snapchat }"
+  "selfRating": "Number",
+  "platformUsage": {}
 }
 ```
 
 ---
 
-## 📊 Score Categories
+# 📊 Score Categories
 
-| Score | Category |
-|-------|----------|
+| Score Range | Category |
+|-------------|----------|
 | 0–30 | 🟢 Healthy |
 | 31–60 | 🟡 Moderate |
 | 61–90 | 🟠 High Impact |
 | 91+ | 🔴 Addicted |
 
-Maximum possible score: **80 points** (20 questions × 4 max per question)
+Maximum Score: 80
 
 ---
 
-## 🎨 Tech Stack
+# 🎨 Tech Stack
 
-| Layer | Tech |
-|-------|------|
-| Frontend | React 18, React Router v6 |
+| Layer | Technology |
+|------|------------|
+| Frontend | React.js |
 | Styling | Tailwind CSS |
-| Charts | Chart.js + react-chartjs-2 |
-| HTTP Client | Axios |
 | Backend | Node.js + Express |
-| Database | MongoDB + Mongoose |
-| Auth | JWT + bcryptjs |
+| Database | MongoDB |
+| Authentication | JWT + bcryptjs |
+| Charts | Chart.js |
+| HTTP Client | Axios |
 
 ---
 
-## 📝 Features
-- ✅ JWT Authentication (signup / login)
-- ✅ 20-question social media habit assessment
-- ✅ Scoring & category classification
-- ✅ Self-judgement slider (compare self vs actual)
-- ✅ Bar chart — question-by-question breakdown
-- ✅ Pie chart — platform usage distribution
-- ✅ Heatmap — time vs productivity
-- ✅ Gauge meter for score visualization
-- ✅ Personalized advice per category
-- ✅ History of past assessments
-- ✅ Responsive dark UI
+# ✨ Features
+
+- ✅ JWT Authentication
+- ✅ Login / Signup
+- ✅ 20 Question Assessment
+- ✅ Score Calculation
+- ✅ Category Classification
+- ✅ Personalized Suggestions
+- ✅ Dashboard Analytics
+- ✅ Bar Chart Visualization
+- ✅ Pie Chart Visualization
+- ✅ Heatmap Analysis
+- ✅ Gauge Meter
+- ✅ Assessment History
+- ✅ Responsive UI
 
 ---
 
-## 🛠️ Troubleshooting
+# 📷 Screenshots
 
-**MongoDB connection error?**
-- Make sure MongoDB is running: `mongod` or use MongoDB Atlas
+## Home Page
+(Add Screenshot Here)
 
-**Port 5000 in use?**
-- Change `PORT` in `backend/.env`
+## Dashboard
+(Add Screenshot Here)
 
-**Frontend can't reach backend?**
-- Ensure backend is running on port 5000
-- Check the `"proxy"` field in `frontend/package.json`
+## Results Page
+(Add Screenshot Here)
+
+## Login Page
+(Add Screenshot Here)
 
 ---
 
-Built with ❤️ using the MERN Stack
+# 🛠️ Troubleshooting
+
+## MongoDB Connection Error
+
+Make sure MongoDB service is running:
+
+```bash
+mongod
+```
+
+OR use MongoDB Atlas.
+
+---
+
+## Port Already in Use
+
+Change port inside `.env`
+
+```env
+PORT=5001
+```
+
+---
+
+## Frontend Cannot Connect to Backend
+
+Ensure backend is running and check proxy inside frontend/package.json:
+
+```json
+"proxy": "http://localhost:5000"
+```
+
+---
+
+# 📁 Important Notes
+
+- Do NOT upload `.env`
+- Add `.gitignore`
+- Add collaborator:
+
+```text
+cse.ph4e@chitkara.edu.in
+```
+
+---
+
+# 📌 GitHub Submission Details
+
+This repository contains:
+
+- IPR Submission Proof
+- Final Report and PPT
+- Complete Source Code
+- Screenshots
+- README Documentation
+
+---
+
+# ❤️ Built With MERN Stack
+
+MongoDB + Express.js + React.js + Node.js
